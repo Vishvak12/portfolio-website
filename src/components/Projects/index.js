@@ -45,7 +45,7 @@ const Projects = () => {
                     title: 'Portfolio Website',
                     description: 'A modern, responsive portfolio website built with React. Features include dynamic GitHub integration, animated skills section, contact form, and smooth page transitions.',
                     technologies: ['React', 'React Router', 'SCSS', 'EmailJS', 'GitHub API'],
-                    github: 'https://github.com/Vishvak12/react-portfoli',
+                    github: 'https://github.com/Vishvak12/portfolio-website',
                     live: window.location.origin, // Current website URL
                     stars: 0,
                     forks: 0,
