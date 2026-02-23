@@ -1,0 +1,211 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+
+    .text-zone {
+        h1 {
+            font-size: 53px;
+            font-family: 'Coolvetica';
+            color: #ffd700;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+        }
+
+        p {
+            font-size: 13px;
+            color: #fff;
+            font-family: sans-serif;
+            font-weight: 300;
+            min-width: fit-content;
+            animation: fadeIn 1s;
+
+            &:nth-of-type(1) {
+                animation-delay: 0.1s;
+            }
+
+            &:nth-of-type(2) {
+                animation-delay: 0.2s;
+            }
+
+            &:nth-of-type(3) {
+                animation-delay: 0.3s;
+            }
+        }
+    }
+
+    .skills-section {
+        margin-top: 50px;
+        width: 100%;
+        max-width: 1000px;
+
+        h2 {
+            font-size: 40px;
+            font-family: 'Coolvetica';
+            color: #ffd700;
+            font-weight: 400;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            animation: fadeIn 1s 0.4s backwards;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 10px;
+
+            .skill-category {
+                background: rgba(17, 81, 115, 0.3);
+                padding: 25px;
+                border-radius: 8px;
+                border: 1px solid rgba(255, 215, 0, 0.2);
+                opacity: 0;
+                animation: fadeInUp 0.8s forwards;
+
+                h3 {
+                    color: #ffd700;
+                    font-size: 20px;
+                    font-family: 'Coolvetica';
+                    margin-bottom: 20px;
+                    margin-top: 0;
+                }
+
+                .skills-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 18px;
+
+                    .skill-item {
+                        opacity: 0;
+                        animation: fadeInLeft 0.6s forwards;
+
+                        .skill-info {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 8px;
+
+                            .skill-name {
+                                color: #fff;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                            .skill-percentage {
+                                color: #ffd700;
+                                font-size: 14px;
+                                font-weight: 600;
+                            }
+                        }
+
+                        .skill-bar {
+                            width: 100%;
+                            height: 10px;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 5px;
+                            overflow: hidden;
+                            position: relative;
+
+                            .skill-progress {
+                                height: 100%;
+                                background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+                                border-radius: 5px;
+                                position: relative;
+                                width: 0;
+                                animation: fillBar 1.5s ease-out forwards;
+                                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    background: linear-gradient(
+                                        90deg,
+                                        transparent,
+                                        rgba(255, 255, 255, 0.3),
+                                        transparent
+                                    );
+                                    animation: shimmer 2s infinite;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--target-width, 100%);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-page {
+        .text-zone h1 {
+            font-size: 40px;
+        }
+
+        .skills-section {
+            h2 {
+                font-size: 30px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    }
+}
