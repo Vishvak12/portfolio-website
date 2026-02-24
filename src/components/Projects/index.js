@@ -22,10 +22,25 @@ const Projects = () => {
                 return response.json();
             })
             .then(data => {
-                // Filter out forks and map to our project format
-                const githubProjects = data
+                // Priority projects to show first (add your repo names here)
+                const priorityProjects = ['super-mario-rl', 'breast-cancer-detection', 'Super-Mario-RL', 'Breast-Cancer-Detection'];
+
+                // Filter out forks and portfolio repos to avoid duplicates
+                let filteredRepos = data
                     .filter(repo => !repo.fork) // Exclude forked repositories
-                    .slice(0, 7) // Limit to 7 projects to make room for portfolio
+                    .filter(repo => !['portfolio-website', 'my-portfolio', 'react-portfoli'].includes(repo.name)); // Exclude portfolio duplicates
+
+                // Separate priority and other repos
+                const priority = filteredRepos.filter(repo =>
+                    priorityProjects.some(name => repo.name.toLowerCase().includes(name.toLowerCase()))
+                );
+                const others = filteredRepos.filter(repo =>
+                    !priorityProjects.some(name => repo.name.toLowerCase().includes(name.toLowerCase()))
+                );
+
+                // Combine: priority first, then others, limit to 7 total
+                const githubProjects = [...priority, ...others]
+                    .slice(0, 7)
                     .map(repo => ({
                         id: repo.id,
                         title: repo.name.replace(/-/g, ' ').replace(/_/g, ' '), // Format repo name
