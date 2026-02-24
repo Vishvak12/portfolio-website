@@ -38,21 +38,34 @@ const Projects = () => {
                     !priorityProjects.some(name => repo.name.toLowerCase().includes(name.toLowerCase()))
                 );
 
+                // Custom descriptions for specific projects
+                const customDescriptions = {
+                    'breast-cancer-detection': 'Machine learning model for early breast cancer detection using deep learning algorithms. Achieves high accuracy in classifying malignant and benign tumors from medical imaging data.',
+                    // Add more custom descriptions here
+                };
+
                 // Combine: priority first, then others, limit to 7 total
                 const githubProjects = [...priority, ...others]
                     .slice(0, 7)
-                    .map(repo => ({
-                        id: repo.id,
-                        title: repo.name.replace(/-/g, ' ').replace(/_/g, ' '), // Format repo name
-                        description: repo.description || 'No description available',
-                        technologies: repo.topics || [], // GitHub topics as technologies
-                        github: repo.html_url,
-                        live: repo.homepage || null, // If repo has a homepage URL
-                        stars: repo.stargazers_count,
-                        forks: repo.forks_count,
-                        language: repo.language,
-                        image: `/images/${repo.name}.jpg` // You can add custom images with repo names
-                    }));
+                    .map(repo => {
+                        // Check if there's a custom description for this repo
+                        const customDesc = Object.keys(customDescriptions).find(key =>
+                            repo.name.toLowerCase().includes(key.toLowerCase())
+                        );
+
+                        return {
+                            id: repo.id,
+                            title: repo.name.replace(/-/g, ' ').replace(/_/g, ' '), // Format repo name
+                            description: customDesc ? customDescriptions[customDesc] : (repo.description || 'No description available'),
+                            technologies: repo.topics || [], // GitHub topics as technologies
+                            github: repo.html_url,
+                            live: repo.homepage || null, // If repo has a homepage URL
+                            stars: repo.stargazers_count,
+                            forks: repo.forks_count,
+                            language: repo.language,
+                            image: `/images/${repo.name}.jpg` // You can add custom images with repo names
+                        };
+                    });
 
                 // Add this portfolio website as a featured project
                 const portfolioProject = {
