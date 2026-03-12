@@ -1,31 +1,30 @@
 import './index.scss';
 
 const About = () => {
-    // Customize these skills with your actual proficiency levels (0-100)
     const skills = {
         "Programming Languages": [
-            { name: "Python", level: 90 },
-            { name: "JavaScript", level: 85 },
-            { name: "C++", level: 80 },
-            { name: "Java", level: 75 }
+            "Python", "JavaScript", "TypeScript", "C++", "C", "Java", "SQL"
         ],
-        "AI/ML & Data Science": [
-            { name: "TensorFlow", level: 85 },
-            { name: "PyTorch", level: 80 },
-            { name: "Scikit-learn", level: 90 },
-            { name: "OpenCV", level: 85 }
+        "AI / ML & Data Science": [
+            "TensorFlow", "PyTorch", "Keras", "Scikit-learn", "OpenCV",
+            "NumPy", "Pandas", "Matplotlib", "Hugging Face", "NLTK",
+            "LangChain", "YOLO"
         ],
         "Web Development": [
-            { name: "React", level: 85 },
-            { name: "Node.js", level: 80 },
-            { name: "HTML/CSS", level: 90 },
-            { name: "MongoDB", level: 75 }
+            "React", "Next.js", "Node.js", "Express.js",
+            "HTML5", "CSS3", "SCSS", "Tailwind CSS",
+            "REST APIs", "GraphQL"
         ],
-        "Robotics & Tools": [
-            { name: "ROS", level: 85 },
-            { name: "Arduino", level: 80 },
-            { name: "Git", level: 90 },
-            { name: "Docker", level: 70 }
+        "Databases": [
+            "MongoDB", "PostgreSQL", "MySQL", "Firebase", "Redis"
+        ],
+        "Robotics & Embedded": [
+            "ROS", "ROS 2", "Arduino", "Raspberry Pi",
+            "Gazebo", "SLAM", "Computer Vision"
+        ],
+        "DevOps & Tools": [
+            "Git", "GitHub", "Docker", "Linux", "Bash",
+            "CI/CD", "AWS", "Vercel", "VS Code", "Jupyter"
         ]
     };
 
@@ -50,32 +49,22 @@ const About = () => {
             <div className='skills-section'>
                 <h2>Technical Skills</h2>
                 <div className='skills-container'>
-                    {Object.entries(skills).map(([category, categorySkills], categoryIndex) => (
-                        <div key={category} className='skill-category'>
+                    {Object.entries(skills).map(([category, items], catIdx) => (
+                        <div
+                            key={category}
+                            className='skill-category'
+                            style={{ animationDelay: `${catIdx * 0.12}s` }}
+                        >
                             <h3>{category}</h3>
-                            <div className='skills-list'>
-                                {categorySkills.map((skill, skillIndex) => (
-                                    <div
-                                        key={skill.name}
-                                        className='skill-item'
-                                        style={{
-                                            animationDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1)}s`
-                                        }}
+                            <div className='skill-tags'>
+                                {items.map((skill, i) => (
+                                    <span
+                                        key={skill}
+                                        className='skill-tag'
+                                        style={{ animationDelay: `${catIdx * 0.12 + i * 0.04}s` }}
                                     >
-                                        <div className='skill-info'>
-                                            <span className='skill-name'>{skill.name}</span>
-                                            <span className='skill-percentage'>{skill.level}%</span>
-                                        </div>
-                                        <div className='skill-bar'>
-                                            <div
-                                                className='skill-progress'
-                                                style={{
-                                                    width: `${skill.level}%`,
-                                                    animationDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1) + 0.5}s`
-                                                }}
-                                            ></div>
-                                        </div>
-                                    </div>
+                                        {skill}
+                                    </span>
                                 ))}
                             </div>
                         </div>
@@ -83,7 +72,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default About;
