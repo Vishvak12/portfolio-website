@@ -33,16 +33,20 @@ const About = () => {
             <div className='text-zone'>
                 <h1>About Me</h1>
                 <p>
-                    I'm a passionate AIML Developer with experience in Software Development and Robotics.
-                    I love building intelligent systems and creating innovative solutions to complex problems.
+                    I'm passionate about solving problems using technology. From building circuits
+                    and cars using microcontrollers in high school to delving into the world of
+                    robotics and biology, I'm always up for a challenge.
                 </p>
                 <p>
-                    My expertise includes machine learning, artificial intelligence, full-stack development,
-                    and robotics systems. I'm always eager to learn new technologies and take on challenging projects.
+                    Using my skills as a developer and trying to apply a creative approach to
+                    everything I do is what drives me. Whether it's training a neural network,
+                    wiring up a sensor on a robot, or just experimenting in the kitchen — I
+                    bring the same curiosity and energy to every project.
                 </p>
                 <p>
-                    When I'm not coding, you can find me exploring new tech trends, contributing to open-source
-                    projects, or working on personal robotics projects.
+                    I thrive at the intersection of AI, software, and hardware — turning ideas
+                    into things that actually work. If there's a hard problem and a blank
+                    terminal, I'm in.
                 </p>
             </div>
 
