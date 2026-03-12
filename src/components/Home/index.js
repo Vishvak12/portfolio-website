@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import LogoV from '../../assets/images/triforce.png';
 import './index.scss';
 
 const Home = () => {
@@ -16,7 +15,6 @@ const Home = () => {
             <div className='text-zone'>
                 <h1>
                     {greeting}, <br />I'm
-                    <img src={LogoV} alt="developer" />
                     Vishvak !
                     <br />
                     Welcome to my website.
