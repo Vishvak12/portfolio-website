@@ -3,7 +3,16 @@ import './index.scss';
 
 const Home = () => {
     const greetings = ['Hi', 'Hello', 'Hey', 'Greetings', 'Welcome', 'Namaste', 'Hola', 'Ciao'];
+    const welcomeMessages = [
+        'Welcome to my website.',
+        'Glad you stopped by.',
+        'Come explore my work.',
+        'Take a look around.',
+        'Thanks for visiting my portfolio.',
+        'Let me show you what I build.'
+    ];
     const [greeting] = useState(() => greetings[Math.floor(Math.random() * greetings.length)]);
+    const [welcomeMessage] = useState(() => welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)]);
 
     const scrollTo = (id) => {
         const el = document.getElementById(id);
@@ -17,7 +26,7 @@ const Home = () => {
                     {greeting}, <br />I'm
                     Vishvak !
                     <br />
-                    Welcome to my website.
+                    {welcomeMessage}
                 </h1>
                 <h2>AIML Developer + Software + Robotics</h2>
                 <div className='button-group'>
