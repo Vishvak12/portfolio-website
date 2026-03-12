@@ -4,14 +4,15 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(2, 44, 67, 0.85);
+    background: rgba(11, 16, 32, 0.86);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     padding: 0 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
     &.scrolled {
-        background: rgba(2, 44, 67, 0.97);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+        background: rgba(11, 16, 32, 0.96);
+        box-shadow: 0 2px 20px var(--color-shadow);
     }
 
     .navbar-inner {
@@ -43,7 +44,7 @@
         display: none;
         background: none;
         border: none;
-        color: #ffd700;
+        color: var(--color-accent);
         font-size: 22px;
         cursor: pointer;
     }
@@ -58,9 +59,9 @@
         li button {
             background: none;
             border: none;
-            color: #8d8d8d;
+            color: var(--color-muted);
             font-size: 13px;
-            font-family: sans-serif;
+            font-family: var(--font-body);
             letter-spacing: 2px;
             text-transform: uppercase;
             cursor: pointer;
@@ -76,13 +77,13 @@
             }
 
             &:hover {
-                color: #ffd700;
-                background: rgba(255, 215, 0, 0.08);
+                color: var(--color-accent);
+                background: var(--color-accent-soft);
             }
 
             &.active {
-                color: #ffd700;
-                background: rgba(255, 215, 0, 0.12);
+                color: var(--color-accent);
+                background: rgba(94, 234, 212, 0.18);
             }
         }
     }
@@ -92,12 +93,12 @@
         gap: 15px;
 
         a {
-            color: #8d8d8d;
+            color: var(--color-muted);
             font-size: 18px;
             transition: color 0.3s ease;
 
             &:hover {
-                color: #ffd700;
+                color: var(--color-accent);
             }
         }
     }
@@ -117,13 +118,13 @@
             top: 60px;
             left: 0;
             right: 0;
-            background: rgba(2, 44, 67, 0.97);
+            background: rgba(11, 16, 32, 0.98);
             flex-direction: column;
             padding: 15px 0;
             gap: 0;
             transform: translateY(-120%);
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px var(--color-shadow);
 
             &.open {
                 transform: translateY(0);

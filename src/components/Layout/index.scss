@@ -6,6 +6,11 @@
 
 section {
     scroll-margin-top: 60px;
+    position: relative;
+
+    &:nth-of-type(even) {
+        background: rgba(255, 255, 255, 0.02);
+    }
 }
 
 .container {

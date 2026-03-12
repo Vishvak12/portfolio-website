@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import LogoV from '../../assets/images/triforce.png';
 import './index.scss';
 
 const Home = () => {
+    const greetings = ['Hi', 'Hello', 'Hey', 'Greetings', 'Welcome', 'Namaste', 'Hola', 'Ciao'];
+    const [greeting] = useState(() => greetings[Math.floor(Math.random() * greetings.length)]);
+
     const scrollTo = (id) => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -11,7 +15,7 @@ const Home = () => {
         <div className='container home-page'>
             <div className='text-zone'>
                 <h1>
-                    Hi, <br />I'm
+                    {greeting}, <br />I'm
                     <img src={LogoV} alt="developer" />
                     Vishvak !
                     <br />

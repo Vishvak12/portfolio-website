@@ -8,8 +8,8 @@
 
         h1 {
             font-size: 53px;
-            font-family: 'Coolvetica';
-            color: #ffd700;
+            font-family: var(--font-display);
+            color: var(--color-accent);
             font-weight: 400;
             margin-top: 0;
             position: relative;
@@ -19,8 +19,8 @@
 
         p {
             font-size: 13px;
-            color: #fff;
-            font-family: sans-serif;
+            color: var(--color-text);
+            font-family: var(--font-body);
             font-weight: 300;
             min-width: fit-content;
             animation: fadeIn 1s;
@@ -46,8 +46,8 @@
 
         h2 {
             font-size: 40px;
-            font-family: 'Coolvetica';
-            color: #ffd700;
+            font-family: var(--font-display);
+            color: var(--color-accent);
             font-weight: 400;
             margin-bottom: 30px;
             margin-left: 10px;
@@ -61,17 +61,18 @@
             padding: 0 10px;
 
             .skill-category {
-                background: rgba(17, 81, 115, 0.3);
+                background: rgba(24, 34, 58, 0.88);
                 padding: 24px 28px;
                 border-radius: 8px;
-                border: 1px solid rgba(255, 215, 0, 0.15);
+                border: 1px solid var(--color-border);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
                 opacity: 0;
                 animation: fadeInUp 0.6s forwards;
 
                 h3 {
-                    color: #ffd700;
+                    color: var(--color-accent);
                     font-size: 18px;
-                    font-family: 'Coolvetica';
+                    font-family: var(--font-display);
                     margin-bottom: 16px;
                     margin-top: 0;
                     letter-spacing: 0.5px;
@@ -83,14 +84,14 @@
                     gap: 10px;
 
                     .skill-tag {
-                        background: rgba(255, 215, 0, 0.08);
-                        color: #fff;
+                        background: rgba(94, 234, 212, 0.08);
+                        color: var(--color-text);
                         font-size: 13px;
-                        font-family: sans-serif;
+                        font-family: var(--font-body);
                         font-weight: 400;
                         padding: 6px 14px;
                         border-radius: 20px;
-                        border: 1px solid rgba(255, 215, 0, 0.25);
+                        border: 1px solid var(--color-border);
                         opacity: 0;
                         animation: fadeInTag 0.4s forwards;
                         transition: all 0.25s ease;
@@ -98,11 +99,11 @@
                         letter-spacing: 0.3px;
 
                         &:hover {
-                            background: rgba(255, 215, 0, 0.18);
-                            border-color: #ffd700;
-                            color: #ffd700;
+                            background: rgba(94, 234, 212, 0.18);
+                            border-color: var(--color-accent);
+                            color: var(--color-accent);
                             transform: translateY(-2px);
-                            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
+                            box-shadow: 0 4px 12px rgba(94, 234, 212, 0.15);
                         }
                     }
                 }

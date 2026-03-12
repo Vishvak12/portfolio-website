@@ -3,14 +3,46 @@ html{
   scroll-behavior: smooth;
 }
 
+:root {
+  --font-body: 'Segoe UI', 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Segoe UI', 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-script: 'Segoe Script', 'Brush Script MT', cursive;
+  --color-bg: #0b1020;
+  --color-bg-alt: #11182d;
+  --color-surface: #18223a;
+  --color-surface-strong: #243250;
+  --color-text: #f8fafc;
+  --color-muted: #a5b4d4;
+  --color-accent: #5eead4;
+  --color-accent-strong: #2dd4bf;
+  --color-accent-soft: rgba(94, 234, 212, 0.12);
+  --color-border: rgba(94, 234, 212, 0.25);
+  --color-shadow: rgba(0, 0, 0, 0.35);
+  --color-danger: #ff7a90;
+  --color-success: #7ee081;
+}
+
 body {
   margin: 0;
-  font: 300 11px/1.4 'Helvetica Neue',sans-serif;
-  color: #444;
-  background: #022c43;
+  font: 400 11px/1.6 var(--font-body);
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at top left, rgba(45, 212, 191, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.14), transparent 25%),
+    linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
   overflow-x: hidden;
   overflow-y: auto;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea {
+  font-family: var(--font-body);
 }

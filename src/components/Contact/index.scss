@@ -2,8 +2,8 @@
     .text-zone {
         h1 {
             font-size: 53px;
-            font-family: 'Coolvetica';
-            color: #ffd700;
+            font-family: var(--font-display);
+            color: var(--color-accent);
             font-weight: 400;
             margin-top: 0;
             position: relative;
@@ -13,10 +13,15 @@
 
         p {
             font-size: 13px;
-            color: #fff;
-            font-family: sans-serif;
+            color: var(--color-text);
+            font-family: var(--font-body);
             font-weight: 300;
             margin-bottom: 30px;
+        }
+
+        .contact-note {
+            margin-top: -10px;
+            color: var(--color-muted);
         }
     }
 
@@ -57,54 +62,88 @@
         input[type='text'],
         input[type='email'] {
             width: 100%;
-            border: 0;
-            background: #115173;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(24, 34, 58, 0.92);
             height: 50px;
             font-size: 16px;
-            color: #fff;
+            color: var(--color-text);
             padding: 0 20px;
             box-sizing: border-box;
+            border-radius: 6px;
         }
 
         textarea {
             width: 100%;
-            border: 0;
-            background: #115173;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(24, 34, 58, 0.92);
             height: 50px;
             font-size: 16px;
-            color: #fff;
+            color: var(--color-text);
             padding: 20px;
             min-height: 150px;
             box-sizing: border-box;
+            border-radius: 6px;
+        }
+
+        input[type='text']:focus,
+        input[type='email']:focus,
+        textarea:focus {
+            outline: 2px solid rgba(94, 234, 212, 0.35);
+            border-color: var(--color-accent);
         }
 
         .flat-button {
-            color: #ffd700;
+            color: var(--color-accent);
             background: 0 0;
             font: 11px;
             letter-spacing: 3px;
             text-decoration: none;
             padding: 8px 10px;
-            border: 1px solid #ffd700;
+            border: 1px solid var(--color-accent);
             float: left;
             border-radius: 4px;
             cursor: pointer;
 
             &:hover {
-                background: #ffd700;
-                color: #333;
+                background: var(--color-accent);
+                color: var(--color-bg);
+            }
+
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
             }
         }
     }
 
-    .success-message {
-        color: #4caf50;
+    .form-message {
         font-size: 14px;
         margin-top: 20px;
         padding: 10px;
-        background: rgba(76, 175, 80, 0.1);
-        border: 1px solid #4caf50;
         border-radius: 4px;
+    }
+
+    .form-message.success {
+        color: var(--color-success);
+        background: rgba(76, 175, 80, 0.1);
+        border: 1px solid var(--color-success);
+    }
+
+    .form-message.error {
+        color: var(--color-danger);
+        background: rgba(255, 107, 107, 0.1);
+        border: 1px solid var(--color-danger);
+    }
+
+    .form-message.sending {
+        color: var(--color-accent);
+        background: rgba(94, 234, 212, 0.1);
+        border: 1px solid var(--color-accent);
+    }
+
+    .form-message.idle {
+        font-size: 14px;
+        color: var(--color-text);
     }
 }
 
