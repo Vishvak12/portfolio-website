@@ -107,7 +107,7 @@ const Contact = () => {
                                     required
                                 />
                             </li>
-                            <li>
+                            <li className='message-field'>
                                 <textarea
                                     name="message"
                                     placeholder="Message"

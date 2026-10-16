@@ -17,6 +17,12 @@
         font-family: var(--font-display);
         font-weight: 400;
 
+        .greeting-text {
+            font-family: 'Coolvetica', var(--font-display);
+            font-size: 1.08em;
+            letter-spacing: 0.5px;
+        }
+
         &::before{
             content:'<h1>';
             font-family: var(--font-script);
@@ -36,9 +42,10 @@
         color: var(--color-muted);
         margin-top:20px;
         font-weight:400;
-        font-size:11px;
+        font-size:18px;
         font-family: var(--font-body);
-        letter-spacing:3px;
+        letter-spacing:1.5px;
+        line-height: 1.5;
         animation: fadeIn 1s 1.8s backwards;
     }
 

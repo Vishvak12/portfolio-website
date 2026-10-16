@@ -57,6 +57,12 @@
                     margin-left: 0;
                 }
             }
+
+            li.message-field {
+                opacity: 1;
+                animation: none;
+                transform: none;
+            }
         }
 
         input[type='text'],
