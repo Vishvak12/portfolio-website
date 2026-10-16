@@ -34,8 +34,8 @@ const About = () => {
                 <h1>About Me</h1>
                 <p>
                     I'm passionate about solving problems using technology. From building circuits
-                    and cars using microcontrollers in high school to delving into the world of
-                    robotics and biology, I'm always up for a challenge.
+                    and cars using microcontrollers in high school to diving into the world of
+                    machine learning and biology, I'm always up for a challenge.
                 </p>
                 <p>
                     Using my skills as a developer and trying to apply a creative approach to
